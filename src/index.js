@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from "ramda";
 
 const fileName = process.argv[2];
 
@@ -14,9 +14,12 @@ testCases.forEach(({ input, output }, index) => {
   const result = Array.isArray(input) ? solution(...input) : solution(input);
   const isEqual = R.equals(result, output);
 
-  console.log(`Test Case ${index + 1}: ${isEqual ? '✅ Passed' : '❌ Failed'}`);
+  console.log(`Test Case ${index + 1}: ${isEqual ? "✅ Passed" : "❌ Failed"}`);
   if (!isEqual) {
-    console.log(`  🔴 Expected: ${JSON.stringify(output)}, but got: ${JSON.stringify(result)}\n     Input: ${JSON.stringify(input)}`);
-
+    console.log(
+      `  🔴 Expected: ${JSON.stringify(output)}, but got: ${JSON.stringify(
+        result
+      )}\n     Input: ${JSON.stringify(input)}`
+    );
   }
 });
