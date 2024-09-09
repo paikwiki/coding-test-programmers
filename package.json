@@ -1,0 +1,16 @@
+{
+  "name": "coding-test-programmers",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js",
+    "create": ". ./scripts/createQuiz.sh"
+  },
+  "type": "module",
+  "author": "paikwiki",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "ramda": "^0.30.1"
+  }
+}
