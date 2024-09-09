@@ -11,7 +11,7 @@ const { solution } = await import(`./quizzes/${fileName}.js`);
 const { testCases } = await import(`./quizzes/${fileName}-test-cases.js`);
 
 testCases.forEach(({ input, output }, index) => {
-  const result = solution(...input);
+  const result = Array.isArray(input) ? solution(...input) : solution(input);
   const isEqual = R.equals(result, output);
 
   console.log(`Test Case ${index + 1}: ${isEqual ? '✅ Passed' : '❌ Failed'}`);
