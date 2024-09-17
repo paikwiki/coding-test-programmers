@@ -16,8 +16,31 @@ $ npm run create quiz120911
 $
 ```
 
-`./src/quizzes/quiz120911-test-cases.js`에 문제의 입력값과 출력값을 작성한 후,
-`./src/quizzes/quiz120911.js` 에서 `solution()` 함수를 완성합니다. 함수의 파라미터가 하나 일 경우에는 리터럴 값을, 두 개 이상일 경우에는 배열을 입력합니다.
+`./src/quizzes/quiz120911-test-cases.js`에 문제의 입력값과 출력값을 작성합니다.
+
+함수의 파라미터는 항상 배열로 입력합니다. 예를 들어:
+
+```js
+// 2. 입력 파라미터가 1개의 정수 타입을 받을 경우(ex: function solution(num) {})
+export const testCases = [
+  { input: [1], output: ["42"] },
+  { input: [2], output: ["42", "42"] },
+];
+
+// 2. 입력 파라미터가 2개의 정수 타입을 받을 경우(ex: function solution(num1, num2) {})
+export const testCases = [
+  { input: [1, 2], output: 3 },
+  { input: [3, 4], output: 7 },
+];
+
+// 3. 입력 파라미터가 2개의 정수를 담은 배열을 받을 경우(ex: function solution(numArr) {})
+export const testCases = [
+  { input: [[1, 2]], output: 3 },
+  { input: [[3, 4]], output: 7 },
+];
+```
+
+프로그래머스 문제에 제시된 `solution()` 함수의 파라미터와 `quiz120911.js`의 `solution()` 함수의 파라미터를 동일하게 작성한 후, `solution()` 함수를 완성합니다.
 
 작성 후에는 아래 명령으로 테스트를 실행해볼 수 있습니다.
 
